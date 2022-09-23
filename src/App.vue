@@ -1,6 +1,6 @@
 <template>
   <div id="app" >
-	<marquee scrollamount="15" truespeed="30" direction="left"  height="145" style="color: darkblue;font-size: 70px;">Ultra Chess Master 3000: Pedro’s Revengeance</marquee>
+	<marquee scrollamount="5" truespeed="30" direction="left"  height="145" style="color: #0A0A95;font-size: 70px;">Ultra Chess Master 3000: Pedro’s Revengeance</marquee>
 	<router-link to="/"></router-link>
 	<router-view></router-view>
 	<a class="btn-audio is-active" ref="abutton" @click="audio_pause"></a>
