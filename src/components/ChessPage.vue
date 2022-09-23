@@ -52,34 +52,52 @@ export default {
 				</div>
 				</td>
 				<td>
-					
+					<div id="letter2left" >
+						<marquee direction="left" loop="1" scrollamount="15" style="position:fixed;top: 200px;"><img src="img/seagull_with_letter_left.gif" /></marquee>
+					</div>
+					<div id="letter2right" >
+						<marquee direction="right" loop="1" scrollamount="15" style="position:fixed;top:200px;"><img src="img/seagull_with_letter_right.gif" /></marquee>
+					</div>
+					<img src="img/candle.gif" align="center" style="padding-left:20px;" width="130"/>
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td bgcolor="white">
 					<editor/>
 				</td>
-				<td>
-					<div align="center">
+				<td>					
+
+					<div>
+						<br/>
+						<br/>
+						<center>
+							<img src="img/sendcard.gif" alt="sendcard"/>
+						</center>
+						<br/>
+						<br/>
+						<h3 style="text-align: center;color: gold;margin-bottom:5px;">Mailbox</h3>
 						<marquee
 						direction="down"
-						width="250"
-						height="200"
+						width="168"
+						height="168"
 						behavior="alternate"
-						style="border:solid">
-							<marquee behavior="alternate" direction="left" ref="bounce1"> i'm bouncing </marquee>
+						style="border:solid;border-color: #AA6C39;">
+							<marquee behavior="alternate" direction="left" ref="bounce1"> <img src="img/letter.gif"/> </marquee>
 						</marquee>	
 					</div>
 					<div>
-						
+						<div id="letter1left" >
+							<marquee direction="left" loop="1" scrollamount="15" style="position:fixed;top:550px;"><img src="img/seagull_with_letter_left.gif" /></marquee>
+						</div>
+						<div id="letter1right" >
+							<marquee direction="right" loop="1" scrollamount="15" style="position:fixed;top:550px;"><img src="img/seagull_with_letter_right.gif" /></marquee>
+						</div>
 					</div>
 				</td>
 			</tr>
 		</tbody>
 	</table>
-	<div id="letter1" >
-		<marquee direction="left" loop="1" scrollamount="15" style="position:fixed;bottom: 100px;"><img src="img/seagull_with_letter_left.gif" /></marquee>
-	</div>
+
 	<div id="letter2"></div>
 
 

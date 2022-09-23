@@ -1,0 +1,12 @@
+diff --git a/node_modules/vue-chessboard/src/components/chessboard/index.vue b/node_modules/vue-chessboard/src/components/chessboard/index.vue
+index 3085f0b..7f7fcf9 100644
+--- a/node_modules/vue-chessboard/src/components/chessboard/index.vue
++++ b/node_modules/vue-chessboard/src/components/chessboard/index.vue
+@@ -1,5 +1,6 @@
+ <template>
+-  <div class="blue merida">
++  <div class="blue merida" style="height:510px;">
++  asdsadasdasdasdasdasd
+     <div ref="board" class="cg-board-wrap"></div> </br>
+   </div>
+ </template>
