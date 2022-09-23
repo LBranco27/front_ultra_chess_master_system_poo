@@ -1,3 +1,32 @@
+diff --git a/node_modules/vue-chessboard/dist/vue-chessboard.css b/node_modules/vue-chessboard/dist/vue-chessboard.css
+index 15a52c9..348ead1 100644
+--- a/node_modules/vue-chessboard/dist/vue-chessboard.css
++++ b/node_modules/vue-chessboard/dist/vue-chessboard.css
+@@ -4,6 +4,15 @@
+  * You need to include the css files in themes folder in order to have the
+  * board and pieces displayed!
+  */
++.blue {
++	height: 335px;
++	padding-right: 11px;
++
++
++}
++
++
++
+ .cg-board-wrap {
+   width: 320px;
+   height: 320px;
+@@ -109,7 +118,7 @@
+   display: flex;
+   pointer-events: none;
+   opacity: 0.8;
+-  font-size: 9px;
++  font-size: 15px;
+ }
+ .cg-board-wrap coords.ranks {
+   right: -15px;
 diff --git a/node_modules/vue-chessboard/src/components/chessboard/index.vue b/node_modules/vue-chessboard/src/components/chessboard/index.vue
 index 3085f0b..7f7fcf9 100644
 --- a/node_modules/vue-chessboard/src/components/chessboard/index.vue
