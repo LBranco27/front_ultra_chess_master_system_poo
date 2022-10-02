@@ -7,7 +7,14 @@ export default {
 	name: 'chess',
 	data: function() {
 		return {
-			greeting: 'Hello'
+			greeting: 'Hello',
+			lettertext: 'teste123[a2][b2]',
+			l1l: false,
+			l1r: false,
+			l2l: false,
+			l2r: false,
+			showletter: false,
+			lettermessage: "mememe"
 		};
 	},
 	mounted(){
@@ -34,6 +41,24 @@ export default {
 				return 'q'
 			}
 		},
+		sendLetter() {
+			this.l1r = true;
+			setTimeout(() => this.l1r = false, 3500);
+			setTimeout(() => this.l2l = true, 4500);
+			setTimeout(() => this.l2l = false, 8000);
+		},
+		receiveLetter() {
+			this.l2r = true;
+			setTimeout(() => this.l2r = false, 3500);
+			setTimeout(() => this.l1l = true, 4500);
+			setTimeout(() => this.l1l = false, 8000);
+			setTimeout(() => this.showletter = true, 8100);
+		},
+		readLetter(){
+			this.showletter = false;
+			alert(this.lettermessage);
+
+		},
 	},
 	components: {
 		chessboard,
@@ -52,11 +77,11 @@ export default {
 				</div>
 				</td>
 				<td>
-					<div id="letter2left" >
-						<marquee direction="left" loop="1" scrollamount="15" style="position:fixed;top: 200px;"><img src="img/seagull_with_letter_left.gif" /></marquee>
+					<div id="letter2left" v-if="l2l">
+						<marquee direction="left" scrollamount="15" style="position:fixed;top: 200px;"><img src="img/seagull_with_letter_left.gif" /></marquee>
 					</div>
-					<div id="letter2right" >
-						<marquee direction="right" loop="1" scrollamount="15" style="position:fixed;top:200px;"><img src="img/seagull_with_letter_right.gif" /></marquee>
+					<div id="letter2right" v-if="l2r">
+						<marquee direction="right" scrollamount="15" style="position:fixed;top:200px;"><img src="img/seagull_with_letter_right.gif" /></marquee>
 					</div>
 					<img src="img/candle.gif" align="center" style="padding-left:20px;" width="130"/>
 				</td>
@@ -69,29 +94,29 @@ export default {
 
 					<div>
 						<br/>
-						<br/>
 						<center>
-							<img src="img/sendcard.gif" alt="sendcard"/>
+							<textarea id="letter" name="w3review" rows="4" v-model="lettertext" placeholder="Between square brackets, choose first the chess piece position and then where it will move."></textarea>
+							</br>
+							<a style="cursor: pointer;" alt="sendcard" @click="sendLetter">
+								<img src="/img/sendcard.gif"/>
+							</a>
 						</center>
-						<br/>
-						<br/>
-						<br/>
 						<h3 style="text-align: center;color: gold;margin-bottom:5px;">Mailbox</h3>
 						<marquee
 						direction="down"
-						width="168"
-						height="168"
+						width="183"
+						height="183"
 						behavior="alternate"
 						style="border:solid;border-color: #AA6C39;">
-							<marquee behavior="alternate" direction="left" ref="bounce1"> <img src="img/letter.gif"/> </marquee>
+							<marquee behavior="alternate" direction="left" ref="bounce1" v-if="showletter" @click="readLetter"> <img src="img/letter.gif" /> </marquee>
 						</marquee>	
 					</div>
 					<div>
-						<div id="letter1left" >
-							<marquee direction="left" loop="1" scrollamount="15" style="position:fixed;top:550px;"><img src="img/seagull_with_letter_left.gif" /></marquee>
+						<div id="letter1left" v-if="l1l">
+							<marquee direction="left" scrollamount="15" style="position:fixed;top:550px;"><img src="img/seagull_with_letter_left.gif" /></marquee>
 						</div>
-						<div id="letter1right" >
-							<marquee direction="right" loop="1" scrollamount="15" style="position:fixed;top:550px;"><img src="img/seagull_with_letter_right.gif" /></marquee>
+						<div id="letter1right" v-if="l1r">
+							<marquee direction="right" scrollamount="15" style="position:fixed;top:550px;" ><img src="img/seagull_with_letter_right.gif" /></marquee>
 						</div>
 					</div>
 				</td>
