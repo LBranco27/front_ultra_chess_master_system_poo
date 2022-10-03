@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/vue-chessboard-examples/'
-    : '/'
+	devServer: {
+		proxy: 'http://localhost:8081'
+	}
 }
